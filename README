@@ -1,0 +1,19 @@
+Descripcion:
+    API REST incompleto . Incluye las acciones index, show, store y destroy. 
+
+Instalacion:
+    - Crear una base de datos e importar la configuracion contenida en el archivo api.sql
+    - Configurar la base de datos en el archivo config.php
+    - Establecer una clave para la codificacion y validacion de API keys en el archivo config.php
+    - instalar dependencias con 'composer install'.
+    - configurar del archivo .htaccess. MUY IMPORTANTE
+
+Uso:
+    - Insertar manualmente un usuario en  la base de datos (login + password);
+    - Autenticación de usuario -> POST /auth.php. Envio de credenciales en formato json {'user':' ', 'password':' ' }
+    - Si las credenciales son validas el cliente recibirá un api-key que debe guardar y adjuntar a las solicitudes al API en los headers
+    - Puede hacer uso de los endpoints disponibles:
+        index: GET /api/modelo/
+        show: GET /api/modelo/#id
+        store: POST /api/modelo/store/
+        destroy: DELETE /api/destroy/#id/

@@ -1,0 +1,11 @@
+
+    RewriteEngine On
+    
+    # Modificar segun la ruta del directorio root del api
+    RewriteBase /php/REST/
+
+    # Redirigir todas las solicitudes al index.php, excepto si es un archivo existente o directorio
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+
